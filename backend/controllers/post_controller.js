@@ -47,7 +47,7 @@ export const deletePost = async (req, res) => {
 		}
 
 		if (post.img) {
-			const imgId = post.img.split("/").pop().split(".")[0];
+			const imgId = post.img.split("/").pop().split(".")[0]; // extract image name (id) from url
 			await cloudinary.uploader.destroy(imgId);
 		}
 
